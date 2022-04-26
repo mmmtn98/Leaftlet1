@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Frist Leaflet 🗺 </title>
+  <!-- Link Leaflet css and javascript -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+  <center>
+  <br>
+  <FONT FACE="DB Manit X" size = "10">
+  <strong><font color="#DA2100">Map of 5 attractions in Berlin, Germany</a></FONT></strong>
+  </FONT><br>
+  <div id = "map" style = "width: 800px ; height: 600px"></div>
+  <script>
+    var map = L.map('map').setView([52.52250226284074, 13.40510374369263],16);
+    mapLink = '<a href="http://openstreetmap.org">Nonthakan</a>';
+
+    L.tileLayer(
+      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; ' + mapLink,
+        maxZoom: 19,
+        }).addTo(map);
+
+      var greenIcon = L.icon({
+          iconUrl: 'beer.png',
+          shadowUrl: "",
+
+          iconSize: [40, 30], // size of the icon
+    shadowSize: [50, 64], // size of the shadow
+    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62], // the same for the shadow
+    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    var marker = L.marker([52.54314439719457, 13.391629394575071],
+    {
+    icon: greenIcon,
+    draggable: true,
+    title: "Berlin Wall Memorial",
+    opacity: 1.5
+     }).addTo(map)
+     .bindPopup("<b>Berlin Wall Memorial</b>")
+     .openPopup();
+
+     var marker = L.marker([52.50792028320257, 13.390285788857922],
+     {
+     icon: greenIcon,
+     draggable: true,
+     title: "Checkpoint Charlie",
+     opacity: 1.5
+      }).addTo(map)
+      .bindPopup("<b>Checkpoint Charlie</b>")
+      .openPopup();
+
+      var marker = L.marker([52.5164554915651, 13.377622810673188],
+      {
+      icon: greenIcon,
+      draggable: true,
+      title: "Brandenburg Gate",
+      opacity: 1.5
+       }).addTo(map)
+       .bindPopup("<b>Brandenburg Gate</b>")
+       .openPopup();
+
+       var marker = L.marker([52.51836202670972, 13.37564077842841],
+       {
+       icon: greenIcon,
+       draggable: true,
+       title: "The German Bundestag",
+       opacity: 1.5
+        }).addTo(map)
+        .bindPopup("<b>The German Bundestag")
+        .openPopup();
+
+        var marker = L.marker([52.519008250816896, 13.400949226745691],
+        {
+        icon: greenIcon,
+        draggable: true,
+        title: "Berlin Cathedral",
+        opacity: 1.5
+         }).addTo(map)
+         .bindPopup("<b>Berlin Cathedral")
+         .openPopup();
+  </script>
+</body>
+</html>
